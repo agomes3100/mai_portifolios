@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Portfólio de Alisson Gomes, desenvolvedor web especializado em HTML, CSS, e JavaScript utilizando IA.">
+    <meta name="keywords" content="desenvolvedor web, portfólio, HTML, CSS, JavaScript, IA">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Portfólio de Alisson Gomes">
+    <meta property="og:description" content="Confira o portfólio de Alisson Gomes, desenvolvedor web especializado em HTML, CSS, e JavaScript utilizando IA.">
+    <meta property="og:image" content="url_da_imagem_previa.jpg">
+    <meta property="og:url" content="https://example.com/portfolio">
+    <meta name="robots" content="index, follow">
+    <title>Portfólio de Alisson Gomes</title>
+    <style>
+        /* Reset básico para remover margens e paddings padrões */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo global do corpo da página */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho com fundo azul e texto centralizado */
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Menu de navegação */
+        nav {
+            margin-top: 10px;
+        }
+
+        /* Links do menu de navegação */
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        /* Mudança de cor no hover dos links do menu */
+        nav a:hover {
+            color: #f2f2f2;
+        }
+
+        /* Estilo geral das seções */
+        section {
+            padding: 60px 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo dos títulos das seções */
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        /* Estilo dos parágrafos */
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Lista sem estilos de marcação */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Estilo dos itens da lista */
+        ul li {
+            padding: 10px 0;
+            font-size: 18px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Estilo do formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Estilo dos inputs e textarea */
+        input, textarea {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Estilo do botão de envio */
+        button {
+            padding: 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Mudança de cor no hover do botão */
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Rodapé com fundo escuro e texto centralizado */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Estilos responsivos para telas menores */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 0;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            ul li {
+                font-size: 16px;
+            }
+
+            form {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+        }
+
+        /* Efeitos de animação para aparição suave das seções */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Animação de fade in */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mudança de cor no menu de navegação ao rolar a página */
+        #nav-menu.nav-scrolled a {
+            color: #f2f2f2;
+        }
+
+        /* Contêiner dos projetos */
+        .project-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Estilo dos blocos de projeto */
+        .project {
+            display: flex;
+            flex-direction: row;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Imagem do projeto como fundo */
+        .project-image {
+            flex: 1;
+            min-height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Detalhes do projeto, incluindo descrição e botão */
+        .project-details {
+            flex: 1.5;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Descrição do projeto com rolagem se necessário */
+        .project-description {
+            max-height: 100px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo do botão de explorar */
+        .explore-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        /* Mudança de cor no hover do botão de explorar */
+        .explore-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos responsivos para os blocos de projetos em telas menores */
+        @media (max-width: 768px) {
+            .project {
+                flex-direction: column;
+            }
+
+            .project-image, .project-details {
+                flex: 1;
+                min-height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Portfólio de Alisson Gomes</h1>
+        <nav id="nav-menu">
+            <a href="#about">Sobre Mim</a>
+            <a href="#projects">Projetos</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#contact">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="fade-in">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Meu nome é Alisson Gomes. Sou um curioso desenvolvedor web em HTML, CSS, e JavaScript utilizando IA. Tenho paixão por criar soluções simples e eficazes, e estou sempre buscando aprender e me aprimorar. Aqui, você pode encontrar alguns dos meus projetos e saber mais sobre minhas habilidades.</p>
+        </section>
+
+        <section id="projects" class="fade-in">
+            <h2>Projetos</h2>
+            <div class="project-container">
+                <div class="project">
+                    <div class="project-image" style="background-image: url('url_da_imagem_projeto_1.jpg');"></div>
+                    <div class="project-details">
+                        <h3>Projeto 1</h3>
+                        <div class="project-description">
+                            <p>Website responsivo para uma empresa fictícia, utilizando HTML5, CSS3 e Bootstrap. O projeto inclui várias páginas, um sistema de navegação intuitivo e layouts adaptáveis para diferentes tamanhos de tela. Além disso, há uma integração básica com uma API para exibir informações dinâmicas.</p>
+                        </div>
+                        <a href="link_para_projeto_1.html" class="explore-button">Explore</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-image" style="background-image: url('url_da_imagem_projeto_2.jpg');"></div>
+                    <div class="project-details">
+                        <h3>Projeto 2</h3>
+                        <div class="project-description">
+                            <p>Desenvolvimento de um dashboard interativo utilizando JavaScript e Chart.js para visualizar dados de forma dinâmica. O dashboard permite a filtragem e análise de grandes volumes de dados, com gráficos interativos e atualizações em tempo real.</p>
+                        </div>
+                        <a href="link_para_projeto_2.html" class="explore-button">Explore</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-image" style="background-image: url('url_da_imagem_projeto_3.jpg');"></div>
+                    <div class="project-details">
+                        <h3>Projeto 3</h3>
+                        <div class="project-description">
+                            <p>Aplicativo web utilizando React.js e Node.js, focado em gerenciamento de tarefas. O app permite aos usuários criar, editar e deletar tarefas, com suporte a autenticação de usuários e integração com banco de dados MongoDB para armazenamento persistente.</p>
+                        </div>
+                        <a href="link_para_projeto_3.html" class="explore-button">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="fade-in">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>Python</li>
+                <li>Desenvolvimento Responsivo</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="fade-in">
+            <h2>Contato</h2>
+            <form action="envio_formulario.html" method="post">
+                <input type="text" name="name" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <textarea name="message" placeholder="Mensagem" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Alisson Gomes. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
